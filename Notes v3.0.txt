@@ -1,0 +1,78 @@
+Illusion BBS v3.00 
+- Michael Griffin a.k.a Mercyful Fate
+- Mrmisticismo@hotmail.com 2003
+
+
+Install original v2.03 BBS Package, then overwrite your .EXE and .OVR files for the latest changes.
+I did a lot of this over a decade ago so i can't help very much, but this is open and free to use or recode.
+
+Source only is provided, i'll have to go through ANSIs and Menus, and the String file to see what
+needs to be provided for a full working system is there is any interest in running or playing with this software.
+
+
+
+[[ Fixes and Updates ]]
+
+- Removed all Registration
+
+- Fixed Y2K Startup Bug
+
+- Fixed Y2K Apply.ips script bug in birthday is new user logon
+
+- Fixed Edit File Descriptions, no longers adds extra line after
+
+- Fixed File Newscan Date function daynum, File Newscans now work correctly!!
+
+- Fixed Insert Mode in FSE to Default on!
+
+- Added String #800 / Quoting of Messages.. begining / ending stings..
+  Line Editor Sucks and is making line lines inbetween white spaces for Quote Prompt.
+
+- Moved FSE Header from source code to Strings.dat Strings #801,#802,#803 are the FSE Header.
+
+- Converted FSE Header to just #801, max 4 Line Ansi (4th line is spacer)
+
+- Made File List Header into ANSI header.. Max 4 Lines for Proper Display #613 in Strings.txt
+  Also Fixed File listing to display 4 line head and footer correctly. (4th line is spacer)
+
+- Added #802 Add to Batch, Q quit in File Listing
+
+- Fixed FSE 24th line, also changed to 12 line Message header. 12 Lines is Custom for my board!
+
+- #803 Private File Flag added 
+
+- Rewrote File listing to give light bar prompt and Lightbar file Tagging with a few more features.
+  Still in early testings stages though.
+
+- Uses new filep.mnu, this is custom made and will need a new editor later to make changes.
+
+- Created Specific filep.mnu reading and lightbar functions specific to the file listing.
+
+- New File are listing with ansi and mci codes, also added file count per each area
+- Rewrote New File Scan Function
+- Fixed bugs with File List Options, completely rewrote the function.
+
+- #802 File Search Promt is now also the new scan prompt.  this is only temp!
+  until i fix the newscan with the normal file listing.. still in easy testing.
+
+- Alot of various code rewritting, Overlay is now defaulted to loading in EMS Memory.
+- Remove Crappy Firework screen saver code.  Was useless and just anoying.
+
+- Removed Return Reciept, was not coded or working and is just anoying.
+
+- File Listing is Displaying Properly now, a few visual fixes as well, various.
+
+- Added FileP.Men Editor, to Make the Light Bar Positions / Colors and Command Names
+  Customizable, access by m at the file sysop menu.
+
+- Optimized file listing by using existing link list.. now it's flys.
+  Still workon on # of files displayed,, sometimes only 2.. :(
+
+
+
+[[ Todo List ]]
+
+Fix the Age calculation from the Birthday.
+Fix File New Scan to use Light bar file listing
+Also add Obv/2 Data Areas 
+Add lightbar message reading prompt for later.
