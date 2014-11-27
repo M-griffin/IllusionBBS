@@ -7,7 +7,7 @@ interface
 
 uses
   crt, dos, common;
-  
+
 
 procedure showcmds(listtype:integer);
 procedure readin;
@@ -101,8 +101,8 @@ begin
   if menur2.directive <> '' then printf(menur2.directive);
   ex:=1;
   thisuser.ac:=thisuser.ac+[ansi];
-  
-  
+
+
   while (not done) and (not hangup) do begin
     tries:=0;
     xx:=1;
@@ -117,11 +117,11 @@ begin
         inc(ex);
       end;
     end; {for i:=1 to noc}
-    
+
     numberofchoices:=ex-1;
     choice:=1;
 
-    
+
     ansig(wherex,wherey);
     sprompt('[1;30m∞[37m‹[47mﬂ[0m€€ﬂ[1;47m‹ [0m‹ [1;30m∞');
 
@@ -234,7 +234,7 @@ begin
     end; {ckey=1 to noc}
   end; {else begin}
  end; {while (not done) and (not hangup) and (not getout) do}
- end; {while (not done) and (not hangup) do begin}  
+ end; {while (not done) and (not hangup) do begin}
 end; {begin}
 
 
@@ -249,9 +249,9 @@ var infile        : file;
 begin
    cmdlist:='';
    noc:=0;
-   
+
    curmenu := systat^.menupath+'FILEP.MEN';
-   
+
    assign(infile,curmenu);
    {$I-} reset(infile,1); {$I-}
    if (ioresult<>0) then begin
@@ -260,13 +260,13 @@ begin
       if (ioresult<>0) then begin
          { Menu Not found }
          sysoplog('"'+curmenu+'" is MISSING - Hung user up.');
-	 sprint('FILEP.MEN menu is MISSING.  Please inform SysOp.');
+   sprint('FILEP.MEN menu is MISSING.  Please inform SysOp.');
          sprint('Critical error.');
          curmenu := last_menu;
-         exit;        
+         exit;
       end;
    end;
-   
+
    if (not hangup) then begin
       blockread(infile,menur2,sizeof(menur2));
       repeat
@@ -294,10 +294,10 @@ begin
       end; { for i = 1 to total command }
       close(infile);
    end; { if not hangup }
-   
-   
+
+
    if not(pulldown in menur2.menuflags) then exit;
-        
+
 end;
 
 

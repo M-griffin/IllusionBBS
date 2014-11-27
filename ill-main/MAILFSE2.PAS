@@ -517,7 +517,7 @@ begin
     until done;
 
     (* New End of Line Quoting *)
-    if (didquote=TRUE) then 	{ Add Finish Quote if Quote was Initated }
+    if (didquote=TRUE) then   { Add Finish Quote if Quote was Initated }
     begin
       str:=getstr(800);
       while (pos('@F',str)<>0) do str:=substone(str,'@F',caps(repfrom));
@@ -528,7 +528,7 @@ begin
       if addedline then insertqln('');
     end;
     (* New End of Line Quoting *)
-    
+
     {if addedline then insertqln('');}
     close(f); cls; statusline; screen;
   end;

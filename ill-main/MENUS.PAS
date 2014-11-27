@@ -43,7 +43,7 @@ Uses
   BBSlist,
   AutoMsg,
   IplX,
-  
+
   FilePEd;
 
 
@@ -599,10 +599,10 @@ begin
                 newmenutoload := true;
               end;
 
- 	  'N':begin
- 	        last_menu2 := curmenu;
- 	        nf(cms);
- 	        curmenu := last_menu2;
+     'N':begin
+           last_menu2 := curmenu;
+           nf(cms);
+           curmenu := last_menu2;
                 newmenutoload := true;
               end;
 
@@ -612,8 +612,8 @@ begin
                 search; {searches for file matching the *.* or whatever}
                 curmenu := last_menu2;
                 newmenutoload := true;
-              end;                               
-                
+              end;
+
           'U':batchul;  {upload}
           'V':lfii;     {file view}
           'Y':printf('filestat');
@@ -621,8 +621,8 @@ begin
 
           '@':createtempdir;
           '#':begin
-	        nl;
-	        print('Type The File Area Number at the Menu Prompt to Change to it!');
+          nl;
+          print('Type The File Area Number at the Menu Prompt to Change to it!');
               end;
 
         else  nocmd:=TRUE;
@@ -773,21 +773,21 @@ begin
                 zlog;
               end;
 
-	  'G':begin
-	        sysoplog('[Sysop] Verbose Editor');  resetverbose(-1);
-	      end;
+    'G':begin
+          sysoplog('[Sysop] Verbose Editor');  resetverbose(-1);
+        end;
           '1':begin
                 sysoplog('[Sysop] File Manager'); editfiles(-1);
               end;
           '2':sort;
           '4':if (cms='') then do_unlisted_download
                 else unlisted_download(cms);
-          '3':begin          
+          '3':begin
                 last_menu2 := curmenu;
                 menup_edit; { filep menu editor }
-	        curmenu := last_menu2;
+          curmenu := last_menu2;
                 newmenutoload := true;
-              end;              
+              end;
           '6':if (checkpw) then uploadall;
           '7':validatefiles;
           '8':addgifspecs;

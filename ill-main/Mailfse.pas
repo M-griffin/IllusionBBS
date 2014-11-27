@@ -79,7 +79,7 @@ Begin
   New(Ln); Ln^.Data:=''; FirstLn:=Ln; EndLn:=Ln;
   Assign(WorkFile,fn);
   {$I-} Reset(WorkFile); {I+}
-  
+
   If (IoResult=0) Then Begin
     OvFlw:=False; MaxLines:=MemAvail Div sizeof(linerec);
     If MaxLines < 0 Then MaxLines:=300;
@@ -143,12 +143,12 @@ End;
 Procedure StatusBot;
 Begin
   {if insrt then s:='Insert   ' else s:='Overwrite';}
-  
-  if insrt then 
+
+  if insrt then
     spstr(805)
-  else 
+  else
     spstr(806);
-    
+
   (*
   clearwaves;
   addwave('MO',s,txt);
@@ -160,7 +160,7 @@ End;
 
 Procedure StatusLine;
 Begin
-  ansig(1,1); 
+  ansig(1,1);
   spstr(801); { Display Message Header }
   StatusBot;
   ansig(j,i-top+12);
@@ -198,7 +198,7 @@ Var Row   : Byte;
     k     : integer;
     yy    : integer;
     xx    : integer;
-    
+
 Begin                 { makes sure i and ln are in register }
   Ln := EndLn^.Next;
   If Top > 1 Then
@@ -213,13 +213,13 @@ Begin                 { makes sure i and ln are in register }
     Ln  := Ln^.Next;
     dec(row);
   End;
-  
-  yy:=wherey;  
+
+  yy:=wherey;
   xx:=wherex;
 
   StatusBot;
-  
-  ansig(xx,yy);  
+
+  ansig(xx,yy);
 End;
 
 function questionbox(q,a:astr):char;
@@ -497,7 +497,7 @@ var f:text;
     k:integer; ch,ch1:string[9];
     s:array[1..9] of string;
     done,addedline:boolean; c1,c2:char;
-    
+
     str:string; { end of Quote string }
 
     procedure insertqln(contents:line);
@@ -554,20 +554,20 @@ begin
         end;
       end;
     until done;
-    
-     
-    if (didquote=TRUE) then 	{ Add Finish Quote if Quote was Initated } 
+
+
+    if (didquote=TRUE) then   { Add Finish Quote if Quote was Initated }
     begin
-      str:=getstr(800);		{ end of line quoting }
+      str:=getstr(800);    { end of line quoting }
       while (pos('@F',str)<>0) do str:=substone(str,'@F',caps(repfrom));
       while (pos('@T',str)<>0) do str:=substone(str,'@T',caps(repto));
       while (pos('@R',str)<>0) do str:=substone(str,'@R',reptitle);
-      insertqln(str);    
+      insertqln(str);
       if addedline then insertqln('');
       if addedline then insertqln('');
       didquote:=FALSE
     end;
-    
+
     close(f); cls; statusline; screen;
   end;
 end;
